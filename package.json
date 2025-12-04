@@ -1,12 +1,23 @@
 {
   "name": "game-download-bot",
   "version": "1.0.0",
-  "description": "Game Download Telegram Bot with Beautiful UI",
+  "description": "Telegram Game Download Bot with Beautiful UI",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "setup": "mkdir -p game_images backups logs",
+    "backup": "cp game_download.db backups/game_download_$(date +%Y%m%d_%H%M%S).db"
   },
+  "keywords": [
+    "telegram",
+    "bot",
+    "games",
+    "download",
+    "nodejs"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
     "node-telegram-bot-api": "^0.64.0",
     "sqlite3": "^5.1.6",
@@ -14,5 +25,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
